@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f6f3ee;
+  --bg-elevated: #fffdf9;
+  --ink: #161311;
+  --muted: #5c534c;
+  --line: #d9d0c6;
+  --accent: #e35134;
+  --accent-ink: #ffffff;
+  --footer: #1b1614;
+}
+
+.dark {
+  --bg: #14110f;
+  --bg-elevated: #1c1816;
+  --ink: #f3ece6;
+  --muted: #b7aaa0;
+  --line: #3a322c;
+  --accent: #e35134;
+  --accent-ink: #ffffff;
+  --footer: #0e0c0b;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-elevated: var(--bg-elevated);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-footer: var(--footer);
+  --font-sans: var(--font-ibm-plex-sans);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+::selection {
+  background: #e35134;
+  color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* sugar-high syntax token colors — light mode */
+:root {
+  --sh-class: #1a6fa0;
+  --sh-identifier: #161311;
+  --sh-sign: #5c534c;
+  --sh-property: #0550ae;
+  --sh-entity: #116329;
+  --sh-jsxliterals: #1a6fa0;
+  --sh-string: #0a3069;
+  --sh-keyword: #cf222e;
+  --sh-comment: #6e7781;
+}
+
+/* sugar-high syntax token colors — dark mode */
+.dark {
+  --sh-class: #79c0ff;
+  --sh-identifier: #f3ece6;
+  --sh-sign: #b7aaa0;
+  --sh-property: #79c0ff;
+  --sh-entity: #7ee787;
+  --sh-jsxliterals: #79c0ff;
+  --sh-string: #a5d6ff;
+  --sh-keyword: #ff7b72;
+  --sh-comment: #8b949e;
+}
+
+/* Code block backgrounds */
+pre {
+  background: #f6f8fa;
+}
+
+.dark pre {
+  background: #161b22;
+}
